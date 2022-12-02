@@ -1,0 +1,44 @@
+﻿Creative Brief: Treasure Hunt
+Company background
+	GamesRus is a company that makes educational games and apps for families and kids.
+	Project overview
+	Create an app that would allow a family to play a simple game of Treasure Hunt where the parent/user can set up a game with a chosen number of locations to find and where each location found gives you a clue to the next location to find. The player wins the game by guessing all the clues and reaching the final location. 
+	Project goals
+	The app must be a CRUD app. The game can be played in-app or played in the real world with the app tracking progress.
+	Target audience
+	This game is aimed at families to play together where one user can set up a game and the player/players can play it. 
+	Scope and specs
+	MVPs:  
+- The app can run a simple game with 10 locations and associated clues and announce when the game is won.
+- The game creator can change the number of locations in a game.
+- The game creator can add new locations with clues to the app and include them in a game.
+- The parent/user can delete locations/clues.
+- The parent/user can modify the name or clue of a location.
+Should have:
+- ability to save a custom game
+Could have:
+- a location can have multiple clues. Clues can be set by type or by level of difficulty by the game creator or randomised by app.
+- a location can have an icon that displays.
+- Ability to select a preset game by theme, ie. animal homes and their sounds.
+- Ability to keep track of scores?
+- 2 player mode?
+- ability to add authorised players
+
+	Tone & messaging
+	Fun, adaptable, educational
+	Timeline
+	Deadline: Wednesday midday
+Key milestones: 
+1. The user can create their own locations with clues.
+2. The user can delete locations with clues.
+3. The user can create a game with preset locations/clues.
+4. The user can change the number of locations in a game.
+5. The user can choose the locations in the game.
+6. The user can save a custom game.
+7. Basic app working in a custom game.
+8. Work on Could Haves.
+Constraints: Must run on flask. must work on a laptop, phone app or tablet.
+	Budget
+	30 to 35 hrs voluntary womanpower, zero budget…
+	Project team
+	Delphine, support crew, home crew, tutors, google
