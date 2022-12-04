@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 
 from models.user import User
+from models.game import Game
+from models.location import Location
 
 def save(user):
     sql = "INSERT INTO users (name) VALUES (%s) RETURNING *"
@@ -24,21 +26,42 @@ def select_all():
         users.append(user)
     return users
 
-#define function select_by_id with id value as parameter
+
 def select_by_id(id):
-    #set user variable equal to None
     user = None
-    # set sql variable equal to select all from users table where id = placeholder
     sql = "SELECT * FROM users WHERE id = %s"
-    #set values variable equal to id dictionary key
     values = [id]
-    # set results variable equal to run function run_sql with parameters sql and values
     results = run_sql(sql, values)
-    # if statement on results = trues:
     if results:
-    #   result variable is the first index position of results variable
         result = results[0]
-    #   user variable equals instance of user class with result[attributes]
         user = User(result['name'], result['id'])
-    #return user variable
     return user
+
+def delete_by_id(id):
+    sql = "DELETE FROM users WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
+
+def games_by_user(user):
+    games = []
+
+    sql = "SELECT * FROM games WHERE user_id = %s"
+    values = [user.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        game = Game(row['name'], row['user_id'], row['id'] )
+        games.append(game)
+    return games
+
+def locations_by_user(user):
+    locations = []
+
+    sql = "SELECT * FROM locations WHERE user_id = %s"
+    values = [user.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        location = Location(row['name'], row['clue'], row['user_id'], row['game_id'], row['id'] )
+        locations.append(location)
+    return locations

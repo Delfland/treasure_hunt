@@ -1,6 +1,6 @@
 class Game:
 
-    def __init__(self, name, creator, id = None):
+    def __init__(self, name, user, id = None):
         self.name = name
-        self.creator = creator
+        self.user = user
         self.id = id

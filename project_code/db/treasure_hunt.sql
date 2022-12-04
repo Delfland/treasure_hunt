@@ -10,13 +10,13 @@ CREATE TABLE users(
 CREATE TABLE games(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
-    user_id INT NOT NULL REFERENCES users(id)
+    user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE locations(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     clue VARCHAR(255),
-    user_id INT NOT NULL REFERENCES users(id),
-    game_id INT NOT NULL REFERENCES games(id)
+    user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+    game_id INT NOT NULL REFERENCES games(id) ON DELETE CASCADE
 );
