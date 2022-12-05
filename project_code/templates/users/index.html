@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+<h2>NEW PLAYER</h2>
+<form>
+    
+</form>
+
+<h2>Select player:</h2>
+<ul>
+    <li>
+        {% for user in all_users %}
+            <button> {{ user.name }} </button>
+        {% endfor %}
+    </li>
+</ul>
