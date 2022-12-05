@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Player {{ user.name }}</h2>
+<section>
+    <h3>My games:</h3>
+        <ul>
+            {% for game in player_games %}
+                <li>
+                    {{ game.name }}
+                    <button><a href="/games/{{game.id}}">view game</a></button>
+                </li>
+            {% endfor %}
+        </ul>
+</section>
+<div>
+    <form action="/games/new" method="post">
+        <input type="submit" value="Create new game">
+    </form>
+</div>
+<div>
+    <form action="/users/{{user.id}}/delete" method="post">
+        <input type="submit" value="Delete Player">
+    </form>
+</div>
+
+{% endblock %}
+

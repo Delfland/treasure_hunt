@@ -1,14 +1,21 @@
 {% extends 'base.html' %}
+
+{% block content %}
 <h2>NEW PLAYER</h2>
-<form>
-    
-</form>
+<form action="/users" method="POST">
+    <input type="text" id="name" name="name" placeholder="Name" required autofocus><br>
+    <button type="submit">Add Player</button>
+  </form>
+
+
 
 <h2>Select player:</h2>
 <ul>
-    <li>
-        {% for user in all_users %}
-            <button> {{ user.name }} </button>
+    {% for user in all_users %}
+        <li>
+            <button><a href="/users/{{user.id}}">{{ user.name }}</a></button>
+        </li>           
         {% endfor %}
     </li>
 </ul>
+{% endblock %}
