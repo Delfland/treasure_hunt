@@ -5,5 +5,16 @@
 
 <h3>Clue: {{ my_location.clue }}</h3>
 
-
+<div>
+    <form action="/locations/{{my_location.id}}/edit">
+        <input type="submit" value="Update location">
+        <input type="hidden" value="{{my_location.user}}" name="user_id">
+        <input type="hidden" value="{{my_location.game}}" name="game_id">
+    </form>
+</div>
+<div>
+    <form action="/locations/{{my_location.id}}/delete" method="post">
+        <input type="submit" value="Delete Location">
+    </form>
+</div>
 {% endblock %}

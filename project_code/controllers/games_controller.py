@@ -1,9 +1,7 @@
 from flask import render_template, redirect, request, Blueprint
 from repositories import games_repository
 from repositories import users_repository
-from repositories import locations_repository
 from models.game import Game
-from models.user import User
 
 games_blueprint = Blueprint("games", __name__)
 
@@ -30,7 +28,7 @@ def save_game():
     user = users_repository.select_by_id(game_user)
     game = Game(name, user)
     games_repository.save(game)
-    return redirect('/games')
+    return redirect(f'/users/{game_user}')
 
 
 # SHOW INDIVIDUAL GAME
@@ -41,12 +39,17 @@ def show_game(id):
     locations = games_repository.locations_by_game(game)
     return render_template('games/game.html', my_game = game, all_locations = locations)
 
-# CREATE NEW LOCATION FOR INDIVIDUAL GAME
-# POST '/games/<id>/locations/new'
-
 # DELETE
 # POST '/games/<id>/delete'
+@games_blueprint.route("/games/<id>/delete", methods=['POST'])
+def delete_game(id):
+    game = games_repository.select_by_id(id)
+    games_repository.delete_by_id(id)
+    return redirect(f'/users/{game.user}')
 
-
-# EDIT
-# POST '/games/<id>/edit'
+#PLAY GAME
+@games_blueprint.route("/games/<id>/play")
+def play_game(id):
+    game = games_repository.select_by_id(id)
+    game_locations = games_repository.locations_by_game(game)
+    

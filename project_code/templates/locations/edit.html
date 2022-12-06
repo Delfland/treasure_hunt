@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Update location</h2>
+
+    <form action="/locations/{{location.id}}" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="{{location.name}}" required>
+        <label for="name">Clue</label>
+        <input type="text" name="clue" id="clue" value="{{location.clue}}" required>
+        <input type="hidden" name="user_id" value="{{location.user}}">
+        <input type="hidden" name="game_id" value="{{location.game}}">
+        <input type="submit" value="Update location">
+    </form>
+    
+{% endblock %}

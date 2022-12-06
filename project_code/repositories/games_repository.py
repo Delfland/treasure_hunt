@@ -54,7 +54,7 @@ def update(game):
 def locations_by_game(game):
     locations = []
 
-    sql = "SELECT * FROM locations WHERE user_id = %s"
+    sql = "SELECT * FROM locations WHERE game_id = %s"
     values = [game.id]
     results = run_sql(sql, values)
 

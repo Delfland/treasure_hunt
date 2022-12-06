@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>All Locations</h2>
+        <ul>
+            {% for location in all_locations %}
+            <li>
+                <p>Location: {{ location.name }}</p>
+                <p>Clue: {{ location.clue }}</p>
+                <p>Game: {{ location.game.name }}</p>
+                <p>Creator: {{ location.user.name }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+{% endblock %}

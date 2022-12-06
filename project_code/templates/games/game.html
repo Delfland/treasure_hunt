@@ -22,4 +22,15 @@
         <input type="hidden" value="{{my_game.id}}" name="game_id">
     </form>
 </div>
+<div>
+    <form action="/games/{{my_game.id}}/delete" method="post">
+        <input type="submit" value="Delete Game">
+    </form>
+</div>
+<div>
+<form action="/users/{{my_game.user}}">
+    <input type="submit" value="Return to Player">
+</form>
+</div>
+
 {% endblock %}
