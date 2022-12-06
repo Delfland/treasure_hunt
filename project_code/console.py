@@ -24,13 +24,13 @@ games_repository.save(game2)
 game3 = Game("Farm vehicles", user1)
 games_repository.save(game3)
 
-location1 = Location("Cow", "Goes Moooo!", user1, game1)
+location1 = Location("Cow", "Goes Moooo!", user1, game1, False)
 locations_repository.save(location1)
-location2 = Location("Duck", "Goes Quack Quack", user1, game1)
+location2 = Location("Duck", "Goes Quack Quack", user1, game1, False)
 locations_repository.save(location2)
-location3 = Location("Deep Dark Woods", "The mouse likes to stroll there", user3, game2)
+location3 = Location("Deep Dark Woods", "The mouse likes to stroll there", user3, game2, False)
 locations_repository.save(location3)
-location4 = Location("Logpile House", "The snake likes to feast there", user3, game2)
+location4 = Location("Logpile House", "The snake likes to feast there", user3, game2, False)
 locations_repository.save(location4)
 
 

@@ -62,6 +62,6 @@ def locations_by_user(user):
     results = run_sql(sql, values)
 
     for row in results:
-        location = Location(row['name'], row['clue'], row['user_id'], row['game_id'], row['id'] )
+        location = Location(row['name'], row['clue'], row['user_id'], row['game_id'], row['found'], row['id'] )
         locations.append(location)
     return locations

@@ -22,7 +22,7 @@ def select_all():
     for row in results:
         user = users_repository.select_by_id(row['user_id'])
         game = games_repository.select_by_id(row['game_id'])
-        location = Location(row['name'], row['clue'], user, game)
+        location = Location(row['name'], row['clue'], user, game, row['found'], row['id'])
         locations.append(location)
     return locations
 
@@ -33,7 +33,7 @@ def select_by_id(id):
     results = run_sql(sql, values)
     if results:
         result = results[0]
-        location = Location(result["name"], result["clue"], result["user_id"], result["game_id"], result["id"])
+        location = Location(result["name"], result["clue"], result["user_id"], result["game_id"], result['found'], result["id"])
     return location
 
 def delete_by_id(id):
@@ -46,3 +46,10 @@ def update(location):
     values = [location.name, location.clue, location.user.id, location.game.id, location.id]
     print(values)
     run_sql(sql, values)
+
+def found(location):
+    sql = "UPDATE locations SET found = %s WHERE id = %s"
+    values = [True, location.id]
+    run_sql(sql,values)
+
+

@@ -4,7 +4,7 @@ from models.location import Location
 class LocationTest(unittest.TestCase):
 
     def setUp(self):
-        self.location = Location("In the fridge", "food can catch a chill when it stays there", 3, 5, 1)
+        self.location = Location("In the fridge", "food can catch a chill when it stays there", 3, 5, False, 1)
 
     def test_location_has_name(self):
         expected_outcome = "In the fridge"

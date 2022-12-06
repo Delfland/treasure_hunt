@@ -59,6 +59,18 @@ def locations_by_game(game):
     results = run_sql(sql, values)
 
     for row in results:
-        location = Location(row['name'], row['clue'], row['user_id'], row['game_id'], row['id'] )
+        location = Location(row['name'], row['clue'], row['user_id'], row['game_id'], row['found'], row['id'] )
+        locations.append(location)
+    return locations
+
+def locations_by_not_found(game):
+    locations = []
+
+    sql = "SELECT * FROM locations WHERE game_id = %s and found = false"
+    values = [game.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        location = Location(row['name'], row['clue'], row['user_id'], row['game_id'], row['found'], row['id'] )
         locations.append(location)
     return locations

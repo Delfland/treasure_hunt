@@ -17,6 +17,7 @@ CREATE TABLE locations(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     clue VARCHAR(255),
+    found BOOLEAN DEFAULT false,
     user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
     game_id INT NOT NULL REFERENCES games(id) ON DELETE CASCADE
 );

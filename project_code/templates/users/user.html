@@ -11,6 +11,9 @@
                     <form action="/games/{{game.id}}">
                         <input type="submit" value="View game">
                     </form>
+                    <form action="/games/{{game.id}}/play">
+                        <input type="submit" value="Play game">
+                    </form>
                 </li>
             {% endfor %}
         </ul>

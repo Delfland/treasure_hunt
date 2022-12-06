@@ -47,9 +47,16 @@ def delete_game(id):
     games_repository.delete_by_id(id)
     return redirect(f'/users/{game.user}')
 
-#PLAY GAME
+#START GAME
 @games_blueprint.route("/games/<id>/play")
 def play_game(id):
     game = games_repository.select_by_id(id)
-    game_locations = games_repository.locations_by_game(game)
-    
+    game_locations = games_repository.locations_by_not_found(game)
+    next_location = game_locations[0]
+    return render_template('games/play.html', clue = next_location.clue)
+
+#NEXT CLUE
+@games_blueprint.route('/games/<id>/play/next')
+def next_clue(game_id):
+    game = games_repository.select_by_id(id)
+    game_locations = games_repository.locations_by_not_found(game)

@@ -2,8 +2,12 @@
 
 {% block content %}
   
-{% for location in game %}
-    
-{% endfor %}
+{{clue}}
+
+<div>
+    <form action='/games/<id>/play/next'>
+        <input type="submit" value="Solved?">
+    </form>
+</div>
 
 {% endblock %}

@@ -38,7 +38,7 @@ def save_location():
     location_game = request.form['game_id']
     user = users_repository.select_by_id(location_user)
     game = games_repository.select_by_id(location_game)
-    location = Location(name, clue, user, game)
+    location = Location(name, clue, user, game, False)
     locations_repository.save(location)
     return redirect(f'/games/{location_game}')
 
@@ -67,6 +67,6 @@ def update_location(id):
     location_game = request.form['game_id']
     user = users_repository.select_by_id(location_user)
     game = games_repository.select_by_id(location_game)
-    location = Location(name, clue, user, game, id)
+    location = Location(name, clue, user, game, False, id)
     locations_repository.update(location)
     return redirect(f'/games/{game.id}')
