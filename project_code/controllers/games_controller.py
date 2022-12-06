@@ -18,16 +18,17 @@ def all_games():
 # GET '/games/new'
 @games_blueprint.route("/games/new", methods=['POST'])
 def new_game():
-    all_users = users_repository.select_all()
-    return render_template("games/new.html", users_list = all_users)
+    user = request.form["user_id"]
+    return render_template("games/new.html", user_id=user )
 
 # SAVE
 # POST '/games/new'
 @games_blueprint.route("/games",  methods=['POST'])
 def save_game():
     name = request.form['name']
-    game_user = request.form['user']
-    game = Game(name, game_user.id)
+    game_user = request.form['user_id']
+    user = users_repository.select_by_id(game_user)
+    game = Game(name, user)
     games_repository.save(game)
     return redirect('/games')
 

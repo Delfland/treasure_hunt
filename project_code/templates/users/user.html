@@ -8,7 +8,9 @@
             {% for game in player_games %}
                 <li>
                     {{ game.name }}
-                    <button><a href="/games/{{game.id}}">view game</a></button>
+                    <form action="/games/{{game.id}}">
+                        <input type="submit" value="View game">
+                    </form>
                 </li>
             {% endfor %}
         </ul>
@@ -16,6 +18,7 @@
 <div>
     <form action="/games/new" method="post">
         <input type="submit" value="Create new game">
+        <input type="hidden" value="{{user.id}}" name="user_id">
     </form>
 </div>
 <div>

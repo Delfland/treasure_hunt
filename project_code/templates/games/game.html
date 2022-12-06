@@ -2,15 +2,24 @@
 
 {% block content %}
 <h2>{{ my_game.name }}</h2>
-
-<ul>
-    {% for location in all_locations %}
-    <li>
-        {{ location.name }}
-        <button><a href="/locations/{{ location.id }}">View location</a></button>
-    </li>
-    {% endfor %}
-</ul>
-
-
+<section>
+    <h3>Locations to find:</h3>
+    <ul>
+        {% for location in all_locations %}
+        <li>
+            {{ location.name }}
+            <form action="/locations/{{location.id}}">
+                <input type="submit" value="View location">
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<div>
+    <form action="/locations/new" method="post">
+        <input type="submit" value="Create new location">
+        <input type="hidden" value="{{my_game.user}}" name="user_id">
+        <input type="hidden" value="{{my_game.id}}" name="game_id">
+    </form>
+</div>
 {% endblock %}
