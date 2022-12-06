@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>All Games</h2>
+        <ul>
+            {% for game in all_games %}
+            <li>
+                <p>Game: {{ game.name }}</p>
+                <p>Creator: {{ game.user.name }}</p>
+            </li>
+            {% endfor %}
+        </ul>
+{% endblock %}

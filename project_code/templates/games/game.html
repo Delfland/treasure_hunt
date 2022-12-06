@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ my_game.name }}</h2>
+
+<ul>
+    {% for location in all_locations %}
+    <li>
+        {{ location.name }}
+        <button><a href="/locations/{{ location.id }}">View location</a></button>
+    </li>
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
