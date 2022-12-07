@@ -4,9 +4,11 @@
 <section>
 <h1>NEW PLAYER</h1>
 <form action="/users" method="POST">
-    <input type="text" id="name" name="name" placeholder="Name" required autofocus><br>
-    <button type="submit">Add Player</button>
-  </form>
+    <div id="add_player">
+        <input type="text" id="name" name="name" placeholder="Name" required autofocus>
+    </div>
+    <input type="submit" value="Add Player">
+</form>
 
 
 
@@ -14,7 +16,7 @@
 <ul>
     {% for user in all_users %}
         <li>
-            <button><a href="/users/{{user.id}}">{{ user.name }}</a></button>
+            <a href="/users/{{user.id}}">{{ user.name }}</a>
         </li>           
         {% endfor %}
     </li>

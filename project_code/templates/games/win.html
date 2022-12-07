@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section>
+<h1>You've won the game!</h1>
+<div>
+    <form action='/games/{{id}}/win'>
+        <input type="submit" value="Return to Player">
+    </form>
+</div>
+</section>
+{% endblock %}

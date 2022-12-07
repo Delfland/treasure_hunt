@@ -74,3 +74,4 @@ def locations_by_not_found(game):
         location = Location(row['name'], row['clue'], row['user_id'], row['game_id'], row['found'], row['id'] )
         locations.append(location)
     return locations
+

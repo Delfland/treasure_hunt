@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Player {{ user.name }}</h2>
 <section>
+<h2>Player {{ user.name }}</h2>
+
     <h3>My games:</h3>
         <ul>
             {% for game in player_games %}
@@ -29,6 +30,11 @@
         <input type="submit" value="Delete Player">
     </form>
 </div>
+<div>
+    <form action="/users">
+        <input type="submit" value="Return to Players">
+    </form>
+    </div>
 </section>
 {% endblock %}
 

@@ -52,4 +52,9 @@ def found(location):
     values = [True, location.id]
     run_sql(sql,values)
 
+def not_found():
+    sql = "UPDATE locations SET found = %s"
+    values = [False]
+    run_sql(sql,values)
+
 

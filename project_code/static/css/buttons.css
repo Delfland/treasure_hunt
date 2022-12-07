@@ -2,9 +2,7 @@ a{
     display: flex;
     justify-content: center;
     flex-direction:row;
-    background-color: #C3986B;
-    border-color: #263A55;
-    color:#263A55;
+    color: #C3986B
     text-decoration: none;
     margin:0cm;
 }
@@ -13,6 +11,34 @@ a:hover{
     text-decoration: underline;
 }
 
+a:visited{
+    text-decoration: none;
+    color: #C3986B
+}
+
+a:active{
+    text-decoration: none;
+    color: #C3986B
+}
+
 i{
     color: #263A55;
+}
+
+#add_player{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#exit{
+    background-color: #C3986B;
+    border:2px solid slategrey;
+    color: #263A55;
+    text-decoration: none;
+}
+
+#press_start{
+    color: #263A55;
+    text-decoration: none;
 }
