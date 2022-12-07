@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<section>
 <h2>Create new game</h2>
 
     <form action="/games" method="post">
@@ -10,5 +10,5 @@
         <input type="hidden" name="user_id" value="{{user_id}}">
         <input type="submit" value="Save game">
     </form>
-    
+</section>    
 {% endblock %}

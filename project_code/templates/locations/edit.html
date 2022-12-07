@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<section>
 <h2>Update location</h2>
 
     <form action="/locations/{{location.id}}" method="post">
@@ -13,5 +13,5 @@
         <input type="hidden" name="game_id" value="{{location.game}}">
         <input type="submit" value="Update location">
     </form>
-    
+</section>    
 {% endblock %}

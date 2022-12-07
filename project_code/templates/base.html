@@ -5,13 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+    <script src="https://kit.fontawesome.com/e5d93f0bda.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
     <title>Treasure Hunters</title>
 </head>
 <body>
-    <h1>Treasure Hunters</h1>
+    <header>
+        
+    </header>
+   <main>
     {% block content %}
         
     {% endblock %}
+    </main>
+    <footer>
+        <a href="/" id="exit">
+            <p><i class="fa-solid fa-skull-crossbones fa-2xl"></i></p>
+            <p>Exit Game</p>
+        </a>
+    </footer>
 </body>
 </html>

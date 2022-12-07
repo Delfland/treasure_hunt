@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section>
     <h2>All Games</h2>
         <ul>
             {% for game in all_games %}
@@ -10,4 +11,5 @@
             </li>
             {% endfor %}
         </ul>
+</section>
 {% endblock %}

@@ -1,0 +1,18 @@
+a{
+    display: flex;
+    justify-content: center;
+    flex-direction:row;
+    background-color: #C3986B;
+    border-color: #263A55;
+    color:#263A55;
+    text-decoration: none;
+    margin:0cm;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+i{
+    color: #263A55;
+}

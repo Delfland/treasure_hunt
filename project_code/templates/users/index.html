@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>NEW PLAYER</h2>
+<section>
+<h1>NEW PLAYER</h1>
 <form action="/users" method="POST">
     <input type="text" id="name" name="name" placeholder="Name" required autofocus><br>
     <button type="submit">Add Player</button>
@@ -18,4 +19,5 @@
         {% endfor %}
     </li>
 </ul>
+</section>
 {% endblock %}
